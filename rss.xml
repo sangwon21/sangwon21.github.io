@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Sangwon Lee]]></title><description><![CDATA[Veritas]]></description><link>https://sangwon21.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 Aug 2021 08:35:06 GMT</lastBuildDate><item><title><![CDATA[WebRTC를 이해하기 위한 기본 개념]]></title><description><![CDATA[WebRTC Basic Concepts]]></description><link>https://sangwon21.github.io/posts/WebRTC Basic Concepts</link><guid isPermaLink="false">https://sangwon21.github.io/posts/WebRTC Basic Concepts</guid><pubDate>Tue, 10 Aug 2021 06:07:59 GMT</pubDate><content:encoded>&lt;h1 id=&quot;webrtc를-이해하기-위한-기본-개념&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#webrtc%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90&quot; aria-label=&quot;webrtc를 이해하기 위한 기본 개념 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;WebRTC를 이해하기 위한 기본 개념&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Sangwon Lee]]></title><description><![CDATA[Veritas]]></description><link>https://sangwon21.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 Aug 2021 09:13:00 GMT</lastBuildDate><item><title><![CDATA[WebRTC를 이해하기 위한 기본 개념]]></title><description><![CDATA[WebRTC Basic Concepts]]></description><link>https://sangwon21.github.io/posts/WebRTC Basic Concepts</link><guid isPermaLink="false">https://sangwon21.github.io/posts/WebRTC Basic Concepts</guid><pubDate>Tue, 10 Aug 2021 06:07:59 GMT</pubDate><content:encoded>&lt;h1 id=&quot;webrtc를-이해하기-위한-기본-개념&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#webrtc%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90&quot; aria-label=&quot;webrtc를 이해하기 위한 기본 개념 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;WebRTC를 이해하기 위한 기본 개념&lt;/h1&gt;
 &lt;h2 id=&quot;nat&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#nat&quot; aria-label=&quot;nat permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;NAT&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;NAT는 Network Address Translation의 약자&lt;/li&gt;
-&lt;li&gt;말 그래로 네트워크 주소 변환 기술입니다.&lt;/li&gt;
+&lt;li&gt;말 그래로 네트워크 주소 변환 기술&lt;/li&gt;
 &lt;li&gt;출발지 및 목적지의 IP주소와 포트 숫자등을 바꿔 재기록하면서 네트워크 트래픽을 주고받을 수 있는 기술&lt;/li&gt;
-&lt;li&gt;여러 대 컴퓨터들의 IP 주소를 하나의 IP주소로 바꿀 수 있습니다.&lt;/li&gt;
-&lt;li&gt;예를 들어, A 컴퓨터에서 나가는 패킷에 A 컴퓨터의 IP주소와 공유기 IP 주소, 그리고 목적지 IP 주소를 모두 NAT 테이블에 보관합니다.&lt;/li&gt;
-&lt;li&gt;만약, 외부에서 공인 IP로 요청이 들어왔을 때는 NAT 테이블을 이용하여, 컴퓨터 A에 전달될 수 있도록 중간에서 중계해줍니다.&lt;/li&gt;
-&lt;li&gt;이 NAT에는 4가지 방식이 존재하는데, 각각 경우에 따라서, NAT가 패킷을 통과시키는 경우와 통과시키지 않는 경우가 있습니다.&lt;/li&gt;
+&lt;li&gt;여러 대 컴퓨터들의 IP 주소를 하나의 IP주소로 교환 가능&lt;/li&gt;
+&lt;li&gt;예를 들어, A 컴퓨터에서 나가는 패킷에 A 컴퓨터의 IP주소와 공유기 IP 주소, 그리고 목적지 IP 주소를 모두 NAT 테이블에 보관&lt;/li&gt;
+&lt;li&gt;만약, 외부에서 공인 IP로 요청이 들어왔을 때는 NAT 테이블을 이용하여, 컴퓨터 A에 전달될 수 있도록 중간에서 중계&lt;/li&gt;
+&lt;li&gt;이 NAT에는 4가지 방식이 존재하는데, 각각 경우에 따라서, NAT가 패킷을 통과시키는 경우와 통과시키지 않는 경우 존재&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;one-to-one-nat-방식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#one-to-one-nat-%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;one to one nat 방식 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;One to One NAT 방식&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -58,7 +58,11 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;입니다. 지금 위에 보이는 표는 제가 임시로 작성한 NAT 테이블이고, 밑에 보이는 4개는 각각 네트워크 요청이라고 생각하시면 됩니다. 왼쪽 2개는 각각 출발지 ip, port이고 오른쪽 2개는 각각 도착지 ip, port입니다. One-to-One NAT는 출발지 ip와 port가 NAT 테이블에 존재하기만 한다면, 패킷을 통과시킵니다. 그렇다면 이 4개의 요청 중 NAT를 통과하여 최종적으로 컴퓨터에 도달할 수 있는 패킷은 무엇일까요? 생각해볼 수 있는 시간 10초 드릴게요. 자 정답은… 4가지 요청 모두를 통과시킵니다.&lt;/li&gt;
+&lt;li&gt;위에 보이는 표는 임의로 작성한 NAT 테이블&lt;/li&gt;
+&lt;li&gt;Internal ip는 사설 ip, External ip는 외부 ip, Destination ip는 목적지 ip를 의미&lt;/li&gt;
+&lt;li&gt;밑에 보이는 4개는 각각 네트워크 요청&lt;/li&gt;
+&lt;li&gt;왼쪽 2개는 각각 출발지 port, ip이고 오른쪽 2개는 각각 도착지 ip, port&lt;/li&gt;
+&lt;li&gt;One-to-One NAT는 출발지 ip와 port가 NAT 테이블에 존재하기만 한다면, 패킷을 통과&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;address-restricted-nat-방식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#address-restricted-nat-%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;address restricted nat 방식 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Address Restricted NAT 방식&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -109,7 +113,7 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;이 방법은 목적지 ip가 NAT 테이블에 존재하기만 하면, 패킷을 통과시켜 줍니다. 그렇다면 이 4개의 요청 중 NAT를 통과하여 최종적으로 컴퓨터에 도달할 수 있는 패킷은 무엇일까요? 생각해볼 수 있는 시간 10초 드릴게요. 자 정답은… 마지막 거 빼고 도달할 수 있겠죠?&lt;/li&gt;
+&lt;li&gt;목적지 ip가 NAT 테이블에 존재하기만 하면, 패킷을 통과&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;port-restricted-nat-방식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#port-restricted-nat-%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;port restricted nat 방식 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Port Restricted NAT 방식&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -160,7 +164,7 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;이 방법은 목적지 ip와 port가 NAT테이블에 존재하기만 하면 패킷을 통과시켜 줍니다. 그렇다면 이 4개의 요청 중 NAT를 통과하여 최종적으로 컴퓨터에 도달할 수 있는 패킷은 무엇일까요? 생각해볼 수 있는 시간 10초 드릴게요. 자 정답은… 첫번째와 마지막입니다.&lt;/li&gt;
+&lt;li&gt;목적지 ip와 port가 NAT테이블에 존재하기만 하면 패킷을 통과&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;symmetric-nat-방식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#symmetric-nat-%EB%B0%A9%EC%8B%9D&quot; aria-label=&quot;symmetric nat 방식 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Symmetric NAT 방식&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -211,9 +215,12 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;이 방법은 NAT테이블에 파란색으로 칠해진 모든 부분이 정확히 일치해야 합니다. 즉, 공유기 ip와 port, 목적지 ip와 port가 모두 일치해야 합니다. 그렇다면 이 4개의 요청 중 NAT를 통과하여 최종적으로 컴퓨터에 도달할 수 있는 패킷은 무엇일까요? 생각해볼 수 있는 시간 10초 드릴게요. 자 정답은… 첫번째 거만 가능합니다.&lt;/li&gt;
+&lt;li&gt;NAT테이블에 노란색으로 칠해진 모든 부분이 정확히 일치해야 통과&lt;/li&gt;
+&lt;li&gt;즉,공유기 ip와 port, 목적지 ip와 port가 모두 일치해야 통과&lt;/li&gt;
+&lt;li&gt;4가지 중에서 앞선 3가지 NAT방식은 STUN 서버를 사용 가능&lt;/li&gt;
+&lt;li&gt;Symmetric NAT 방식은 사용이 불가&lt;/li&gt;
+&lt;li&gt;Symmetric 방식을 위하여, TURN 서버를 사용&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;4가지 중에서 앞선 3가지 NAT방식은 STUN 서버를 사용 가능하지만, Symmetric NAT 방식은 사용이 불가합니다. Symmetric 방식을 위하여, TURN 서버를 사용해야 합니다. STUN 서버와 TURN 서버는 모두 WebRTC 연결을 위해 사용하는 서버인데, 각각을 살펴보겠습니다.&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&quot;stun-서버&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#stun-%EC%84%9C%EB%B2%84&quot; aria-label=&quot;stun 서버 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;STUN 서버&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -263,7 +270,20 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;STUN 서버를 통하여 WebRTC를 연결한다고 가정을 합시다. 앞서 말한 NAT 때문에, 외부에서는 공유기 뒤에 있는 사설 ip를 알 방법이 없습니다. 즉, A라는 컴퓨터가 B라는 컴퓨터를 바라볼 때는 B 컴퓨터의 사설 ip를 모릅니다. 하지만, 정작 B 컴퓨터는 자신의 공인 ip 주소를 모릅니다. 왜냐하면, 공유기의 ip 주소를 모르기 때문입니다. 이 때, STUN서버에 요청을 보냅니다. A 컴퓨터에서 STUN서버에 요청을 보내면, A 컴퓨터가 공유기를 통하여 변환된 ip주소를 응답 패킷에 동봉하여, A 컴퓨터에게 알려줍니다. 이 과정을 통하면 A 컴퓨터는 자신의 공인 ip 주소를 알 수 있습니다. B 컴퓨터 역시 이 과정을 거치게 됩니다. 후에 보겠지만 ‘시그널링(Signaling)’ 과정을 통하여, A 컴퓨터는 자신이 연결해야 하는 B 컴퓨터의 공인 ip 주소를, B 컴퓨터는 A 컴퓨터의 공인 ip 주소를, 얻게 됩니다. 이 둘은 이렇게 연결이 됩니다. 이 과정에서, Symmetric NAT는 STUN 서버를 사용할 수 없습니다. 왜냐하면 A 컴퓨터가 B 컴퓨터와 연결을 시도한다면, Symmetric NAT는 아마 이렇게 불평할겁니다. ‘내 NAT 테이블에 있는 공인 ip는 STUN서버와 연결되어 있지, A 컴퓨터는 연결한 적이 없기에 NAT테이블엔 존재하지 않는다!.’&lt;/li&gt;
+&lt;li&gt;STUN 서버를 통하여 WebRTC를 연결한다고 가정&lt;/li&gt;
+&lt;li&gt;앞서 말한 NAT 때문에, 외부에서는 공유기 뒤에 있는 사설 ip를 알 방법이 전무&lt;/li&gt;
+&lt;li&gt;즉, A라는 컴퓨터가 B라는 컴퓨터를 바라볼 때는 B 컴퓨터의 사설 ip를 모름&lt;/li&gt;
+&lt;li&gt;더불어, B 컴퓨터는 자신의 공인 ip 주소를 모름&lt;/li&gt;
+&lt;li&gt;왜냐하면, 인터넷 세상에 연결시켜주는 공유기의 ip 주소를 모르기 때문&lt;/li&gt;
+&lt;li&gt;이 때, STUN서버에 요청&lt;/li&gt;
+&lt;li&gt;A 컴퓨터에서 STUN서버에 요청을 보내면, A 컴퓨터가 공유기를 통하여 변환된 ip주소를 응답 패킷에 동봉하여, A 컴퓨터에게 전송&lt;/li&gt;
+&lt;li&gt;이 과정을 통하면 A 컴퓨터는 자신의 공인 ip 주소를 획득&lt;/li&gt;
+&lt;li&gt;B 컴퓨터 역시 이 과정을 거치게 됩니다.&lt;/li&gt;
+&lt;li&gt;WebRTC에서는 ‘시그널링(Signaling)’ 과정을 통하여, A 컴퓨터는 자신이 연결해야 하는 B 컴퓨터의 공인 ip 주소를, B 컴퓨터는 A 컴퓨터의 공인 ip 주소를, 획득&lt;/li&gt;
+&lt;li&gt;이 둘은 이렇게 연결 성립&lt;/li&gt;
+&lt;li&gt;이 과정에서, Symmetric NAT는 STUN 서버를 사용 불가&lt;/li&gt;
+&lt;li&gt;왜냐하면 A 컴퓨터가 B 컴퓨터와 연결을 시도한다면, Symmetric NAT는 아마 이렇게 불평&lt;/li&gt;
+&lt;li&gt;내 NAT 테이블에 있는 공인 ip는 STUN서버와 연결되어 있지, A 컴퓨터는 연결한 적이 없기에 NAT테이블엔 존재하지 않는다!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;turn-서버&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#turn-%EC%84%9C%EB%B2%84&quot; aria-label=&quot;turn 서버 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TURN 서버&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -314,7 +334,12 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Symmetric NAT 경우에는 다른 방법을 사용해야 합니다. 이 방법이 TURN 서버입니다. TURN 서버는 ‘잘’ 알려진 서버입니다. 그래서, A와 B 모두 이 서버와 연결을 이룰 수 있습니다. 이 서버와 연결을 이루면, 이 서버를 통한 패킷은 NAT를 통과할 수 있습니다. 그래서 이 서버에서 A와 B의 연결을 중계해줍니다. A와 B가 연결을 할 때, 지금 보시는 것처럼 TURN서버를 통해 연결하기 때문에 아무래도 STUN 서버보다는 성능이 좋지는 않지만, WebRTC는 TURN 서버의 존재 덕분에 어떠한 경우에도 연결을 보장할 수 있습니다.&lt;/li&gt;
+&lt;li&gt;Symmetric NAT 경우에는 다른 방법을 사용&lt;/li&gt;
+&lt;li&gt;이 방법이 TURN 서버&lt;/li&gt;
+&lt;li&gt;TURN 서버는 ‘잘’ 알려진 서버입니다.&lt;/li&gt;
+&lt;li&gt;그래서, A와 B 모두 이 서버와 연결 성립&lt;/li&gt;
+&lt;li&gt;이 서버와 연결을 이루면, 이 서버를 통한 패킷은 NAT를 통과 가능&lt;/li&gt;
+&lt;li&gt;그래서 이 서버에서 A와 B의 연결을 중계&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;ice와-sdp&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ice%EC%99%80-sdp&quot; aria-label=&quot;ice와 sdp permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ICE와 SDP&lt;/h2&gt;
 &lt;p&gt;&lt;span
@@ -365,7 +390,11 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;ICE는 Interactive Connectivity Establishment의 약자로, WebRTC에 사용할 수 있는 STUN 서버와 TURN 서버를 고르는 과정입니다. SDP는 WebRTC에 참여하는 참여자의 정보입니다. 예를 들어, 사용하는 비디오의 코덱이 될 수도 있고, 앞에서 본 것처럼 공인 ip 주소가 될 수도 있습니다. 시그널링(Signaling)은 이 SDP를 WebRTC에 참여하는 객체들끼리 교환하는 과정을 일컫습니다.&lt;/li&gt;
+&lt;li&gt;ICE는 Interactive Connectivity Establishment의 약자&lt;/li&gt;
+&lt;li&gt;WebRTC에 사용할 수 있는 STUN 서버와 TURN 서버를 고르는 과정&lt;/li&gt;
+&lt;li&gt;SDP는 WebRTC에 참여하는 참여자의 정보&lt;/li&gt;
+&lt;li&gt;예를 들어, 사용하는 비디오의 코덱이 될 수도 있고, 앞에서 본 것처럼 공인 ip 주소도 포함&lt;/li&gt;
+&lt;li&gt;시그널링(Signaling)은 이 SDP를 WebRTC에 참여하는 객체들끼리 교환하는 과정&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;비유를-통한-webrtc&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B9%84%EC%9C%A0%EB%A5%BC-%ED%86%B5%ED%95%9C-webrtc&quot; aria-label=&quot;비유를 통한 webrtc permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;비유를 통한 WebRTC&lt;/h2&gt;
 &lt;p&gt;&lt;span
