@@ -8,7 +8,7 @@ category: "WebRTC"
 tags:
   - "WebRTC"
   - "NAT"
-description: "WebRTC Basic Concepts"
+description: "WebRTC 이해를 위한 기본 개념"
 socialImage: "/media/42-line-bible.jpg"
 ---
 
@@ -99,3 +99,7 @@ socialImage: "/media/42-line-bible.jpg"
 ## 비유를 통한 WebRTC
 
 ![WebRTC Analogy](/media/webrtc-analogy.png)
+
+## 참고
+
+[WebRTC 관련 youtube](https://www.youtube.com/watch?v=FExZvpVvYxA)
